@@ -1,0 +1,37 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+
+body {
+    display: grid;
+}
+
+.btn-primary {
+    background-color: #5f4192!important;
+    border-color: #5f4192!important;
+} 
+
+.bg-primary {
+    background-color: #5f4192!important;
+}
+
+.text-primary {
+    color: #5f4192!important;
+}
+
+.form-export {
+	margin-bottom: 16px;
+}
+
+.delete {
+    background-color: #EE5E64!important;
+    display: none !important;
+}
+
+.bi.bi-trash3 {
+    color: white;
+  }
+
+  .teste {
+      background-color: #EE5E64;
+  }
+
+  
