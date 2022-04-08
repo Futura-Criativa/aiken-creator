@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pt_BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="JRRSouzaJ - Futura Criativa MEI">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Criador de Questões Ainken</title>
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
+</head>
+<!-- Corpo -->
+
+<body class="bg-light">
+    <div class="container">
+        <main>
+            <div class="py-5 text-center">
+                <img class="d-block mx-auto mb-4" src="assets/brand/futura.svg" alt="" width="72" height="57">
+                <h2>Olá,</h2>
+                <p class="lead">Esta aplicação tem por objetivo fornecer uma interface leve e intuitiva para se criar questões que utilizem o formato AIKEN.</p>
+                <p class="lead">O arquivo final é exportado com a formatação necessária para validação na importação do Moodle.</p>
+            </div>
+
+            <div class="row g-5">
+                <fieldset class="col-md-5 col-lg-4 order-md-last counter-list" id="question-list">
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-primary">Total</span>
+                        <span class="badge bg-primary rounded-pill"><i class="total-list">0</i></span>
+                    </h4>
+                    <form class="card p-2 form-export" id="exportForm">
+                        <div class="input-group">
+                            <input type="text" name="filename" id="filename" class="form-control" autocomplete="off"  placeholder="Nome do arquivo" aria-label="" aria-describedby="" required>
+                            <input class="btn btn-primary" type="submit" id="btnExport" value="Exportar">
+                        </div>
+                    </form>
+                    <section>
+                        <div class="templates" id="templates">
+                        </div>
+                    </section>
+                    <section>
+                        <input type="hidden" id="totalQt" value=""></input>
+                    </section>
+                </fieldset>
+                <!-- Formulário -->
+                <div class="col-md-7 col-lg-8">
+                    <h4 class="mb-3">Questão</h4>
+                    <form class="needs-validation" id="qtForm" novalidate>
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label for="textarea" class="form-label">Preencha todos os campos abaixo:</label>
+                                    <textarea name="answer0" class="form-control" autocomplete="off"  id="answer0" placeholder="Seu enunciado aqui" rows="3" required></textarea>
+                                    <div class="invalid-feedback">
+                                        Não pode ficar vazio
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="">A.</span>
+                                    <input type="text" name="answer1" id="answer1" class="form-control" autocomplete="off"  placeholder="Esta é sempre a resposta correta" aria-label="Resposta" aria-describedby="" required>
+                                    <div class="invalid-feedback">
+                                        Não pode ficar vazio
+                                    </div>
+
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="">B.</span>
+                                    <input type="text" name="answer2" id="answer2" class="form-control" autocomplete="off"  placeholder="Outra opção de resposta" aria-label="Resposta" aria-describedby="" required>
+                                    <div class="invalid-feedback">
+                                        Não pode ficar vazio
+                                    </div>
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="">C.</span>
+                                    <input type="text" name="answer3" id="answer3" class="form-control" autocomplete="off"  placeholder="Outra opção de resposta" aria-label="Resposta" aria-describedby="" required>
+                                    <div class="invalid-feedback">
+                                        Não pode ficar vazio
+                                    </div>
+
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="">D.</span>
+                                    <input type="text" name="answer4" id="answer4" class="form-control" autocomplete="off"  placeholder="Outra opção de resposta" aria-label="Resposta" aria-describedby="" required>
+                                    <div class="invalid-feedback">
+                                        Não pode ficar vazio
+                                    </div>
+
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="">E.</span>
+                                    <input type="text" name="answer5" id="answer5" class="form-control" autocomplete="off"  placeholder="Outra opção de resposta" aria-label="Resposta" aria-describedby="" required>
+                                    <div class="invalid-feedback">
+                                        Não pode ficar vazio
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <hr class="my-4">
+
+                            <input class="w-100 btn btn-primary btn-lg" type="submit" id="addQt" value="Adicionar questão">
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">&copy; 2017–2022 Futura Criativa</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="https://creativecommons.org/licenses/by/4.0/deed.pt_BR" target="_blank">Licença Creative Commons 4.0</a></li>
+            </ul>
+        </footer>
+    </div>
+    <!-- Scripts Externos -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script src="scripts/js/add-item.js" defer></script>
+    <script src="scripts/js/save.js" defer></script>
+    <!-- Scripts Internos -->
+</body>
+
+</html>
