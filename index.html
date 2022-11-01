@@ -1,19 +1,18 @@
 <!doctype html>
 <html lang="pt_BR">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="JRRSouzaJ - Futura Criativa MEI">
     <meta name="generator" content="Hugo 0.84.0">
-    <title>Criador de Questões Ainken</title>
+    <title>Gerador de Questões Aiken</title>
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
     <link href="main.css" rel="stylesheet">
 </head>
 <!-- Corpo -->
-
 <body class="bg-light">
     <div class="container">
         <main>
@@ -23,16 +22,15 @@
                 <p class="lead">Esta aplicação tem por objetivo fornecer uma interface leve e intuitiva para se criar questões que utilizem o formato AIKEN.</p>
                 <p class="lead">O arquivo final é exportado com a formatação necessária para validação na importação do Moodle.</p>
             </div>
-
-            <div class="row g-5">
+            <div class="row g-5">                
                 <fieldset class="col-md-5 col-lg-4 order-md-last counter-list" id="question-list">
-                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">                    
                         <span class="text-primary">Total</span>
                         <span class="badge bg-primary rounded-pill"><i class="total-list">0</i></span>
                     </h4>
                     <form class="card p-2 form-export" id="exportForm">
                         <div class="input-group">
-                            <input type="text" name="filename" id="filename" class="form-control" autocomplete="off"  placeholder="Nome do arquivo" aria-label="" aria-describedby="" required>
+                            <input type="text" name="filename" id="filename" class="form-control" autocomplete="off" placeholder="Nome do arquivo" aria-label="" aria-describedby="" required>
                             <input class="btn btn-primary" type="submit" id="btnExport" value="Exportar">
                         </div>
                     </form>
@@ -43,6 +41,41 @@
                     <section>
                         <input type="hidden" id="totalQt" value=""></input>
                     </section>
+                    <!-- Limpar Cache -->
+                    <div class="d-grid gap-2 clear">
+                        <a type="button" class="btn btn-danger" id="clearCache" type="button">
+                            Limpar Cache
+                        </a>
+                    </div>
+                    <!-- Button trigger modal -->
+                    <div class="d-grid gap-2">
+                        <a type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#buyCoffee">
+                            Que tal um café?<i class="lni lni-coffee-cup icon"></i>
+                        </a>
+                        <p><a class="btn" href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=jrrsouzaj" target="_blank">Follow on LinkedIn</a></p>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="buyCoffee" tabindex="-1" aria-labelledby="buyCoffee" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="buyCoffeeTitle">Que tal um Café?</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                   <p>Este é um serviço de uso gratuito e de código aberto.</p> 
+                                    <p>Você pode ajudar sendo um colaborador do código no <a href="https://gitlab.com/JRRSouzaJ/aiken-quizz-creator" target="_blank" >GitLab </a>melhorando ou reportando erros.</p>
+                                    <p>Como opção pode também contribuir com um cafézinho.</p>
+                                    <p>O QRCode abaixo é uma Chave Pix.</p>
+                                    <img class="chave-pix" src="assets/chave-pix.png" class="img-thumbnail" alt="...">
+                                    <p>Ajude com o valor que quiser.</p>
+                                </div>  
+                                <div class="modal-footer">
+                                    <a type="button" class="btn btn-primary" href="https://www.paypal.com/donate/?business=F6UQFGE9GPCHC&no_recurring=1&item_name=Coffee+is+the+lifeblood+of+a+developer.%0AThank+you+for+your+donation.&currency_code=BRL" target="_blank">PayPal<i class="lni lni-paypal icon"></i></a>
+                                  </div>                                                            
+                            </div>
+                        </div>
+                    </div>
                 </fieldset>
                 <!-- Formulário -->
                 <div class="col-md-7 col-lg-8">
@@ -52,70 +85,58 @@
                             <div class="col-12">
                                 <div class="mb-3">
                                     <label for="textarea" class="form-label">Preencha todos os campos abaixo:</label>
-                                    <textarea name="answer0" class="form-control" autocomplete="off"  id="answer0" placeholder="Seu enunciado aqui" rows="3" required></textarea>
+                                    <textarea name="answer0" class="form-control" autocomplete="off" id="answer0" placeholder="Seu enunciado aqui" rows="3" required></textarea>
                                     <div class="invalid-feedback">
                                         Não pode ficar vazio
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col-12">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="">A.</span>
-                                    <input type="text" name="answer1" id="answer1" class="form-control" autocomplete="off"  placeholder="Esta é sempre a resposta correta" aria-label="Resposta" aria-describedby="" required>
+                                    <input type="text" name="answer1" id="answer1" class="form-control" autocomplete="off" placeholder="Esta é sempre a resposta correta" aria-label="Resposta" aria-describedby="" required>
                                     <div class="invalid-feedback">
                                         Não pode ficar vazio
                                     </div>
-
                                 </div>
-
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="">B.</span>
-                                    <input type="text" name="answer2" id="answer2" class="form-control" autocomplete="off"  placeholder="Outra opção de resposta" aria-label="Resposta" aria-describedby="" required>
+                                    <input type="text" name="answer2" id="answer2" class="form-control" autocomplete="off" placeholder="Outra opção de resposta" aria-label="Resposta" aria-describedby="" required>
                                     <div class="invalid-feedback">
                                         Não pode ficar vazio
                                     </div>
                                 </div>
-
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="">C.</span>
-                                    <input type="text" name="answer3" id="answer3" class="form-control" autocomplete="off"  placeholder="Outra opção de resposta" aria-label="Resposta" aria-describedby="" required>
+                                    <input type="text" name="answer3" id="answer3" class="form-control" autocomplete="off" placeholder="Outra opção de resposta" aria-label="Resposta" aria-describedby="" required>
                                     <div class="invalid-feedback">
                                         Não pode ficar vazio
                                     </div>
-
                                 </div>
-
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="">D.</span>
-                                    <input type="text" name="answer4" id="answer4" class="form-control" autocomplete="off"  placeholder="Outra opção de resposta" aria-label="Resposta" aria-describedby="" required>
+                                    <input type="text" name="answer4" id="answer4" class="form-control" autocomplete="off" placeholder="Outra opção de resposta" aria-label="Resposta" aria-describedby="" required>
                                     <div class="invalid-feedback">
                                         Não pode ficar vazio
                                     </div>
-
                                 </div>
-
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="">E.</span>
-                                    <input type="text" name="answer5" id="answer5" class="form-control" autocomplete="off"  placeholder="Outra opção de resposta" aria-label="Resposta" aria-describedby="" required>
+                                    <input type="text" name="answer5" id="answer5" class="form-control" autocomplete="off" placeholder="Outra opção de resposta" aria-label="Resposta" aria-describedby="" required>
                                     <div class="invalid-feedback">
                                         Não pode ficar vazio
                                     </div>
-
                                 </div>
-
                             </div>
-
                             <hr class="my-4">
-
                             <input class="w-100 btn btn-primary btn-lg" type="submit" id="addQt" value="Adicionar questão">
                     </form>
                 </div>
             </div>
         </main>
-
-        <footer class="my-5 pt-5 text-muted text-center text-small">
-            <p class="mb-1">&copy; 2017–2022 Futura Criativa</p>
+        <footer class="my-5 pt-5 text-muted text-center text-small">       
+            <p>Feito com <i class="lni lni-heart-filled"></i> por Futura Criativa</p>
+            <p class="mb-1">&copy; 2017–2022</p>
             <ul class="list-inline">
                 <li class="list-inline-item"><a href="https://creativecommons.org/licenses/by/4.0/deed.pt_BR" target="_blank">Licença Creative Commons 4.0</a></li>
             </ul>
@@ -128,5 +149,4 @@
     <script src="scripts/js/save.js" defer></script>
     <!-- Scripts Internos -->
 </body>
-
 </html>
