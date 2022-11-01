@@ -7,7 +7,10 @@ Esta aplicação é uma ferramente de lado cliente que processo os dados de entr
 - Gratuito
 - Mágico
 
-Veja o projeto funcionando em: http://aiken-quizz.surge.sh/
+Veja o projeto funcionando em: 
+
+- Surge: http://aiken-quizz.surge.sh/
+- Github: https://futura-criativa.github.io/aiken-creator/
 
 ## Recursos
 
